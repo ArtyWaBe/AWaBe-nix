@@ -5,8 +5,9 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../modules/common/default.nix
-      ../../modules/hardware/nvidia-laptop.nix
-      ../../modules/hardware/intel.nix
+      ../../modules/hardware/gpu/nvidia-laptop.nix
+      ../../modules/hardware/gpu/intel.nix
+      ../../modules/harrdware/perifer/bluetooth.nix
     ];
 
   environment.systemPackages = with pkgs; [
@@ -18,21 +19,20 @@
     thermald = {
       enable = true
   };
+  	greetd = {
+		enable = true;
+		settings = {
+			default_session = {
+				command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --user-menu";
+				user = "greeter";
+				};
+			};
+		};
 };
-
-  hardware = {
-    bluetooth = {
-      enable= true;
-      powerOnBoot = true;
-    };
-
-    nvidia = {
-      powerManagement.enable = true;
-      powerManagement.finegrained = true;
-      open = true;
-      modesetting.enable = true;
-
-    };
-  };
-
+		
+  programs.hyprland = {
+		enable = true;
+		withUWSM = true;
+		xwayland.enable = true;
+		};
 }

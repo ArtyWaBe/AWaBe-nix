@@ -14,7 +14,7 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "nixos"; # Define your hostname.
+   # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -70,24 +70,7 @@
   	greetd.tuigreet
   ];
 
-  #Hyprland
-	services.greetd = {
-		enable = true;
-		settings = {
-			default_session = {
-				command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --user-menu";
-				user = "greeter";
-				};
-			};
-		};
-		
-  programs.hyprland = {
-		enable = true;
-		withUWSM = true;
-		xwayland.enable = true;
-		};
-
-    hardware.graphics.enable = true;
+    hardware.graphics.enable = true; #enabling graphics
   
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
