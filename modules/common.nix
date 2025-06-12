@@ -23,6 +23,15 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
+};
 
   # Set your time zone.
   time.timeZone = "Europe/Sofia";
@@ -51,14 +60,6 @@
   # Enabling Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.nachko = {
-    isNormalUser = true;
-    description = "nachko";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -67,7 +68,6 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
-  	greetd.tuigreet
   ];
 
     hardware.graphics.enable = true; #enabling graphics

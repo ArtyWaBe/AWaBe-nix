@@ -20,5 +20,26 @@
 				};
 			};
 		};
+  environment.systemPackages = with pkgs; [
+  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+  #  wget
+  	greetd.tuigreet
+  ];
+
+  programs.hyprland = {
+		enable = true;
+		withUWSM = true;
+		xwayland.enable = true;
+		};
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users = {
+	nachko = {
+		isNormalUser = true;
+		description = "nachko";
+		extraGroups = [ "networkmanager" "wheel" ];
+		packages = with pkgs; [];
+  };
+};
 
 }

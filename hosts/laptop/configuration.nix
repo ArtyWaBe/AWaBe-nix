@@ -13,6 +13,7 @@
   environment.systemPackages = with pkgs; [
     brightnessctl
     power-profiles-daemon
+    greetd.tuigreet
   ];
 
   services = {
@@ -35,4 +36,13 @@
 		withUWSM = true;
 		xwayland.enable = true;
 		};
+
+  users.users = {
+	  nachko = {
+      isNormalUser = true;
+      description = "nachko";
+      extraGroups = [ "networkmanager" "wheel" ];
+      packages = with pkgs; [];
+  };
+};
 }
