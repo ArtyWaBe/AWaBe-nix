@@ -15,15 +15,6 @@
     	userEmail = "hororr646@gmail.com";
     	extraConfig = {
       		init.defaultBranch = "main";
-	}
-
-	wayland.windowManager.hyprland = {
-	enable = true;
-	settings = {
-	 "$mod" = "SUPER";
-	 bind = [
-	 	"$mod, Q, exec, uwsm app -- kitty"
-	 	];
-	 };
- };
+	};
+	};
 }

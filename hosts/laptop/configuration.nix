@@ -7,7 +7,7 @@
       ../../modules/common/default.nix
       ../../modules/hardware/gpu/nvidia-laptop.nix
       ../../modules/hardware/gpu/intel.nix
-      ../../modules/harrdware/perifer/bluetooth.nix
+      ../../modules/hardware/perifer/bluetooth.nix
     ];
 
   environment.systemPackages = with pkgs; [
