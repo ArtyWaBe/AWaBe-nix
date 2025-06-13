@@ -36,4 +36,6 @@
   };
 };
 
+  networking.hostName = "desktop-nachko";
+
 }

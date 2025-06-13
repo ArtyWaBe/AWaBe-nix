@@ -12,7 +12,7 @@
 
 	outputs =  inputs@{ nixpkgs, home-manager, ... }: {
 		nixosConfigurations = {
-		 desktop = nixpkgs.lib.nixosSystem {
+		 desktop-nachko = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 			modules = [
 				./hosts/desktop-nachko/configuration.nix
@@ -26,7 +26,7 @@
 				}
 			];
 		 };
-		 laptop = nixpkgs.lib.nixosSystem {
+		 laptop-nachko = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 			modules = [
 				./hosts/laptop-nachko/configuration.nix

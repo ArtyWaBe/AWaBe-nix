@@ -40,6 +40,8 @@
   };
 };
 
+  networking.hostName = "laptop-nachko";
+
   graphics.nvidiaLaptopOffload = {
     enable = true;
 
