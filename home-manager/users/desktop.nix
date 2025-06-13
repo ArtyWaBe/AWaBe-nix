@@ -3,6 +3,7 @@
     imports = [
         ../common.nix
         ../programs/hyprland.nix
+        ../programs/uwsm.nix
     ];
 
     
@@ -29,4 +30,16 @@
             default_monitor = "DP-3";
 
         };
+
+        #Setting env variables through UWSM
+        home.uwsm.env = {
+            XCURSOR_SIZE = 24;
+            LIBVA_DRIVER_NAME = nvidia;
+            GBM_BACKEND = nvidia-drm;
+            __GLX_VENDOR_LIBRARY_NAME = nvidia;
+            ELECTRON_OZONE_PLATFORM_HINT = auto;
+            MOZ_DISABLE_RDD_SANDBOX = 1;
+            LIBVA_MESSAGING_LEVEL = 1;
+            NVD_BACKEND = direct;
+            };
 }
