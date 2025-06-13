@@ -83,7 +83,7 @@ in {
         offload.enable = true;
         offload.enableOffloadCmd = true; #creates the nvidia-offload command to run programs with gpu accel (basically prime-run)
         sync.enable = false;
-    }
-    }
+    };
+    };
 
 }
