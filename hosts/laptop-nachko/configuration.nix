@@ -18,7 +18,7 @@
 
   services = {
     thermald = {
-      enable = true
+      enable = true;
   };
   	greetd = {
 		enable = true;
@@ -49,5 +49,5 @@
     #GET THIS BY RUNNING lspci -nn | grep -E 'VGA|3D|Display'
     iGpuBusId = "0000:00:02.0";
     nvidiaBusId = "0000:01:00.0";
-  }
+  };
 }
