@@ -1,7 +1,7 @@
 { config, pkgs, ...}:
 {
     imports = [
-        ../common.nix
+        ../common-nachko.nix
         ../programs/hyprland.nix
         ../programs/uwsm.nix
     ];
