@@ -5,7 +5,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../modules/common/default.nix
-      ../../modules/hardware/gpu/nvidia-laptop.nix
+      ../../modules/hardware/gpu/nvidia-offload.nix
       ../../modules/hardware/gpu/intel.nix
       ../../modules/hardware/perifer/bluetooth.nix
     ];
@@ -39,4 +39,13 @@
       packages = with pkgs; [];
   };
 };
+
+  graphics.nvidiaLaptopOffload = {
+    enable = true;
+
+    iGpuType = "intel";
+    #GET THIS BY RUNNING lspci -nn | grep -E 'VGA|3D|Display'
+    iGpuBusId = "0000:00:02.0";
+    nvidiaBusId = "0000:01:00.0";
+  }
 }
