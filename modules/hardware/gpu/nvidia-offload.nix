@@ -66,8 +66,9 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    # <--- THIS IS THE CHANGE: _module.check is now inside config
-    _module.check = lib.check (cfg.iGpuBusId != "" && cfg.nvidiaBusId != "")
+    # <--- THIS IS THE CHANGE: Use lib.assertMsg instead of lib.check
+    _module.check = lib.assertMsg
+                      (cfg.iGpuBusId != "" && cfg.nvidiaBusId != "")
                       "NVIDIA Prime Offload requires 'intelBusId' and 'nvidiaBusId' to be set in graphics.nvidiaLaptopOffload.";
 
     services.xserver.videoDrivers = lib.mkIf (cfg.iGpuType == "intel") [ "modesetting" "nvidia" ]
