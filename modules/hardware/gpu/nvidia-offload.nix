@@ -65,13 +65,11 @@ in {
     };
   };
 
-  # <--- THIS IS THE CHANGE: Move _module.check out of config and use lib.check
-  _module.check = lib.mkIf cfg.enable (
-    lib.check (cfg.iGpuBusId != "" && cfg.nvidiaBusId != "")
-      "NVIDIA Prime Offload requires 'intelBusId' and 'nvidiaBusId' to be set in graphics.nvidiaLaptopOffload."
-  );
-
   config = lib.mkIf cfg.enable {
+    # <--- THIS IS THE CHANGE: _module.check is now inside config
+    _module.check = lib.check (cfg.iGpuBusId != "" && cfg.nvidiaBusId != "")
+                      "NVIDIA Prime Offload requires 'intelBusId' and 'nvidiaBusId' to be set in graphics.nvidiaLaptopOffload.";
+
     services.xserver.videoDrivers = lib.mkIf (cfg.iGpuType == "intel") [ "modesetting" "nvidia" ]
                                    // lib.mkIf (cfg.iGpuType == "amd") [ "amdgpu" "nvidia" ]; #modesetting is Intel, use amdgpu for amd, setting the order of driver search
 
