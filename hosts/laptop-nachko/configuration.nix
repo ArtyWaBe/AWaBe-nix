@@ -16,7 +16,7 @@
     greetd.tuigreet
   ];
 
-  bootloader.grub.devices = ["/dev/nvme0n1"]
+  bootloader.grub.devices = ["/dev/nvme0n1"];
 
   services = {
     thermald = {
