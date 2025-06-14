@@ -20,7 +20,7 @@
             # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
             allow_tearing = false;
 
-            layout = dwindle;
+            layout = "dwindle";
                     };
              decoration = {
                 rounding = 10;
@@ -91,7 +91,7 @@
 
 # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
                 master = {
-                    new_status = master;
+                    new_status = "master";
                 };
 
 # https://wiki.hyprland.org/Configuring/Variables/#misc
@@ -107,7 +107,7 @@
 
                 # https://wiki.hyprland.org/Configuring/Variables/#input
                 input = {
-                    kb_layout = us,bg(phonetic);
+                    kb_layout = "us,bg(phonetic)";
                     kb_options = "grp:alt_shift_toggle";
                     numlock_by_default = true;
 
