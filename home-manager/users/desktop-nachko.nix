@@ -6,8 +6,8 @@
         ../programs/uwsm.nix
     ];
 
-    
-    wayland.windowManager.hyprland = {
+    wayland.windowManager.hyprland.enable = true;
+    wayland.windowManager.hyprland.settings = {
         #Setting host specific monitor settings
         monitor = [
             "DP-3, 1920x1080@144, 0x0, 1"
