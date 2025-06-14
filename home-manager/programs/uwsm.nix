@@ -15,7 +15,9 @@ in {
     };
   };
 
-  home.file.".config/uwsm/env".text = concatStringsSep "\n" (
+  config = {
+    home.file.".config/uwsm/env".text = concatStringsSep "\n" (
     mapAttrsToList (name: value: "export ${name}=${toString value}") cfg.env
   ); 
+  };
 }
