@@ -16,7 +16,7 @@
     greetd.tuigreet
   ];
 
-  boot.loader.grub.devices = ["/dev/nvme0n1"];
+  boot.loader.grub.devices = ["nodev"];
   boot.loader.grub.efiSupport = true
 
   services = {
