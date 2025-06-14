@@ -6,7 +6,6 @@
         ../programs/uwsm.nix
     ];
 
-    wayland.windowManager.hyprland.enable = true;
     wayland.windowManager.hyprland.settings = {
         #Setting host specific monitor settings
         monitor = [
