@@ -17,7 +17,7 @@
   ];
 
   boot.loader.grub.devices = ["nodev"];
-  boot.loader.grub.efiSupport = true
+  boot.loader.grub.efiSupport = true;
 
   services = {
     thermald = {
