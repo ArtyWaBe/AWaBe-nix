@@ -50,4 +50,10 @@
     iGpuBusId = "0000:00:02.0";
     nvidiaBusId = "0000:01:00.0";
   };
+
+	programs.hyprland = {
+			enable = true;
+			withUWSM = true;
+			xwayland.enable = true;
+			};	  
 }
