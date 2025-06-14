@@ -4,8 +4,6 @@
 	wayland.windowManager.hyprland = {
 	enable = true;
 	settings = {
-        monitor = "DP-3, 1920x1080@144, 0x0, 1";
-        monitor = "DP-2, 1920x1080@60, -1920x0, 1";
         general = {
             gaps_in = 5;
             gaps_out = 10;
