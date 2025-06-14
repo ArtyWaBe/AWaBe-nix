@@ -22,7 +22,6 @@
 					home-manager.useUserPackages = true;
 
 					home-manager.users.nachko = import ./home-manager/users/desktop-nachko.nix;
-					home.stateVersion = "25.05";
 				}
 			];
 		 };
@@ -36,7 +35,6 @@
 					home-manager.useUserPackages = true;
 
 					home-manager.users.nachko = import ./home-manager/users/laptop-nachko.nix;
-					home.stateVersion = "25.05";
 				}
 			];
 		 };
